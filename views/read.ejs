@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="main">
+        <div class="left-side reader">
+            <h1 class="title-blog"><%= title %></h1>
+            <div class="buttons-container">
+                <a class="button secondary-color primary-text-color" href="/edit?id=<%= id %>">Edit</a>
+                <a class="button cancel-button primary-text-color" href="/?id=<%= id %>&action=delete">Delete</a>
+            </div>
+        </div>
+        
+        <div class="separator tertiary-color"></div>
+
+        <div class="right-side">
+            <p class="container text-area tertiary-color"><%- body %></p>
+        </div>
+    </div>
+
+<%- include('partials/footer.ejs') %>

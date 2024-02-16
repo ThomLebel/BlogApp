@@ -1,0 +1,42 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="main">
+        <div class="left-side">
+            <h1 class="title-home">
+                Welcome to<br>
+                Bonaventure<br>
+                BlogApp
+            </h1>
+            <a href="/create">
+                <button class="button secondary-color primary-text-color button-home">Create a blog post</button>
+            </a>
+        </div>
+
+        <div class="separator tertiary-color"></div>
+        
+        <div class="right-side">
+            <div class="container">
+                <% if (blog_list.length <= 0) { %>
+                <p>Please create a blog post.</p>
+                <% } else { %>
+                    <ul>
+                        <% for(var i=0; i<blog_list.length; i++){ %>
+                            <li class="button secondary-color">
+                                <a class="button-title primary-text-color" href="/read?id=<%= blog_list[i].id %>">
+                                    <%= blog_list[i].title %>
+                                    <a href="/edit?id=<%= blog_list[i].id %>">
+                                        <button class="button primary-color">Edit</button>
+                                    </a>
+                                    <a href="/?id=<%= blog_list[i].id %>&action=delete">
+                                        <button class="button cancel-button">Delete</button>
+                                    </a>
+                                </a>
+                            </li>
+                        <% } %>
+                    </ul>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="main">
+        <form action="/" method="POST">
+            <input class="text-area tertiary-color" type="text" name="title" placeholder="Title">
+            <textarea class="text-area tertiary-color" rows="15" cols="60" wrap="hard" name="body" placeholder="Body"></textarea>
+            <div class="buttons-container">
+                <input class="button secondary-color primary-text-color" type="submit" value="Create">
+                <a href="/">
+                    <input class="button cancel-button primary-text-color" type="button" value="Delete">
+                </a>
+            </div>
+        </form>
+    </div>
+
+<%- include('partials/footer.ejs') %>
